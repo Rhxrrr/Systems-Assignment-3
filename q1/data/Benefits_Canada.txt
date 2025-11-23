@@ -1,0 +1,7 @@
+Serial;Code;Name;Details;URL;
+1;CWB;Canada Workers Benefit;The Canada Workers Benefit (CWB) is a refundable tax credit that provides financial support to low-income workers.;https://www.canada.ca/en/revenue-agency/services/benefits/canada-workers-benefit.html
+2;CCB;Canada Child Benefit;The Canada Child Benefit (CCB) is a tax-free monthly payment for families to help with the cost of raising children.;https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit-overview.html
+3;RDSP;Registered Disability Savings Plan;The RDSP helps parents and others save for the long-term financial security of a person with a disability.;https://www.canada.ca/en/employment-social-development/programs/disability/savings/plans.html
+4;DTC;Disability Tax Credit;The Disability Tax Credit helps people with disabilities reduce their income tax burden.;https://www.canada.ca/en/revenue-agency/services/disability-tax-credit-dtc.html
+5;CDB;Canada Dental Benefit;The Canada Dental Benefit helps families with children under 12 access dental care services.;https://www.canada.ca/en/revenue-agency/services/child-family-benefits/dental-benefit.html
+
