@@ -1,0 +1,8 @@
+# Ignore binaries and object files
+*.o
+client/client
+server/server
+
+# Optional: ignore editor temp files
+*.swp
+*.bak
