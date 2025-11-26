@@ -73,7 +73,7 @@ int main(int argc, char *argv[]) {
             continue; // don't exit the server, just skip this client
         }
 
-        // Allocate client info for the thread
+       
         client_info_t *info = malloc(sizeof(client_info_t));
         if (!info) {
             fprintf(stderr, "malloc() failed\n");
@@ -91,8 +91,6 @@ int main(int argc, char *argv[]) {
             free(info);
             continue;
         }
-
-        // We don't need to join this thread later; let it clean itself up
         pthread_detach(tid);
     }
 
