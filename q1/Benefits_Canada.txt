@@ -4,4 +4,3 @@ Serial;Code;Name;Details;URL;
 3;RDSP;Registered Disability Savings Plan;The RDSP helps parents and others save for the long-term financial security of a person with a disability.;https://www.canada.ca/en/employment-social-development/programs/disability/savings/plans.html
 4;DTC;Disability Tax Credit;The Disability Tax Credit helps people with disabilities reduce their income tax burden.;https://www.canada.ca/en/revenue-agency/services/disability-tax-credit-dtc.html
 5;CDB;Canada Dental Benefit;The Canada Dental Benefit helps families with children under 12 access dental care services.;https://www.canada.ca/en/revenue-agency/services/child-family-benefits/dental-benefit.html
-
