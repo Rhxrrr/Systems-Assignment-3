@@ -1,4 +1,8 @@
 // server.c
+/*
+ * Benefits Canada Server
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -73,7 +77,6 @@ int main(int argc, char *argv[]) {
             continue; // don't exit the server, just skip this client
         }
 
-       
         client_info_t *info = malloc(sizeof(client_info_t));
         if (!info) {
             fprintf(stderr, "malloc() failed\n");
