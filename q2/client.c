@@ -31,8 +31,12 @@ int main() {
         return 1;
     }
 
+    printf("Connected to server.\n"); 
+    printf("You can type TIME, DATE, or EXIT.\n"); 
+
     while (1) {
-        printf("\nEnter command (TIME, DATE, EXIT): "); // read user input command
+        printf("> ");
+
         fgets(buffer, BUFFER, stdin);
         buffer[strcspn(buffer, "\n")] = 0;
 
@@ -45,7 +49,7 @@ int main() {
             break;
         }
 
-        int bytes = recv(sock, buffer, BUFFER - 1, 0); // recieve response from server
+        int bytes = recv(sock, buffer, BUFFER - 1, 0); // receive response from server
         buffer[bytes] = '\0';
         printf("Server: %s\n", buffer);
     }

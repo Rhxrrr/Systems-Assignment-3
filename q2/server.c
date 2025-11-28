@@ -25,10 +25,8 @@ void* handle_client(void* arg) {
 
     while (1) {
         memset(buffer, 0, BUFFER);
-
         bytes = recv(client_sock, buffer, BUFFER - 1, 0);
         if (bytes <= 0) break;
-
         buffer[bytes] = '\0';
 
         if (strcmp(buffer, "TIME") == 0) { // commands 
@@ -36,7 +34,7 @@ void* handle_client(void* arg) {
             struct tm *t = localtime(&now);
 
             char time_str[100];
-            sprintf(time_str, "%02d:%02d:%02d",
+            sprintf(time_str, "Current time: %02d:%02d:%02d",
                     t->tm_hour, t->tm_min, t->tm_sec);
 
             send(client_sock, time_str, strlen(time_str), 0);
@@ -47,21 +45,21 @@ void* handle_client(void* arg) {
             struct tm *t = localtime(&now);
 
             char date_str[100];
-            sprintf(date_str, "%04d-%02d-%02d",
+            sprintf(date_str, "Current date: %04d-%02d-%02d",
                     t->tm_year + 1900, t->tm_mon + 1, t->tm_mday);
 
             send(client_sock, date_str, strlen(date_str), 0);
         }
 
         else if (strcmp(buffer, "EXIT") == 0) {
-            char msg[] = "Goodbye";
+            char msg[] = "Goodbye!";
             send(client_sock, msg, strlen(msg), 0);
             close(client_sock);
             pthread_exit(NULL);
         }
 
         else {
-            char msg[] = "Invalid command"; //invalid input
+            char msg[] = "Invalid command!"; //invalid input
             send(client_sock, msg, strlen(msg), 0);
         }
     }
@@ -84,11 +82,19 @@ int main() {
     bind(server_fd, (struct sockaddr*)&address, sizeof(address)); // bind and listen
     listen(server_fd, 10);
 
-    printf("Server listening on port %d...\n", PORT);
+    printf("Server running on port %d...\n", PORT);
 
     while (1) {
         client_sock = malloc(sizeof(int));
         *client_sock = accept(server_fd, (struct sockaddr*)&address, &addrlen); // accept client in loop
+
+        if (*client_sock < 0) {
+            perror("Accept failed");
+            free(client_sock);
+            continue;
+        }
+
+        printf("Client connected.\n");
 
         pthread_t tid; // spawn thread for client
         pthread_create(&tid, NULL, handle_client, client_sock);
