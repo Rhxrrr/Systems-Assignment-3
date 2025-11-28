@@ -1,3 +1,9 @@
+/*
+ * Team Name: Hamzah Alhamadani, Fardin Alam, Mohammed Abdulaziz
+ * Group Number: 24
+ * Course: CSCI 3310U
+ * Assignment: 3
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -91,3 +97,4 @@ int main() {
 
     return 0;
 }
+
